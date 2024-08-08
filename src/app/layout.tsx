@@ -1,7 +1,11 @@
+import './global.css';
+import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import '@public/themes/viva-light/theme.css';
 import type { Metadata } from 'next';
 import { type FC } from 'react';
 import { PrimeReactProvider } from 'primereact/api';
+import { DefaultLayout } from '@/widgets/layouts';
 
 export const metadata: Metadata = {
 	title: 'Desnol',
@@ -10,16 +14,11 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<IWrapper> = (props) => {
 	return (
-		<html lang='en'>
-			<head>
-				<link
-					id='app-theme'
-					rel='stylesheet'
-					href='./themes/viva-light/theme.css'
-				/>
-			</head>
+		<html lang='ru'>
 			<body>
-				<PrimeReactProvider>{props.children}</PrimeReactProvider>
+				<PrimeReactProvider>
+					<DefaultLayout>{props.children}</DefaultLayout>
+				</PrimeReactProvider>
 			</body>
 		</html>
 	);
