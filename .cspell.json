@@ -1,0 +1,17 @@
+{
+	"import": [
+		"@schoero/cspell-config"
+	],
+	"words": [
+		"desnol",
+		"nextjs",
+		"schoero",
+		"primeflex",
+		"primereact"
+	],
+	"ignorePaths": [
+		"node_modules/**",
+		".eslintrc.json",
+		"yarn.lock"
+	]
+}
