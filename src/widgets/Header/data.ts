@@ -1,7 +1,7 @@
 import { RouterPaths } from '@/shared/enums';
 import { MenuItem } from 'primereact/menuitem';
 
-interface INavigationMenuItem extends MenuItem {
+export interface INavigationMenuItem extends MenuItem {
 	id: RouterPaths;
 	label: string;
 }
@@ -9,7 +9,7 @@ interface INavigationMenuItem extends MenuItem {
 export const navLinks: INavigationMenuItem[] = [
 	{
 		id: RouterPaths.Login,
-		label: 'Главная',
+		label: 'Вход',
 	},
 	{
 		id: RouterPaths.Appeal,

@@ -8,3 +8,7 @@ body {
 	display: flex;
 	align-items: center;
 }
+
+.max-h-1000 {
+	max-height: 1000px;
+}

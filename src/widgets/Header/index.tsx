@@ -1,32 +1,23 @@
 'use client';
 import { FC } from 'react';
-import { navLinks } from './data';
-import { Menubar } from 'primereact/menubar';
-import { useRouter } from 'next/navigation';
+import { INavigationMenuItem, navLinks } from './data';
+import { TabMenu } from 'primereact/tabmenu';
+import { usePathname, useRouter } from 'next/navigation';
 import { containerPadding } from '@/shared/ui';
-import { Avatar } from 'primereact/avatar';
-import { Badge } from 'primereact/badge';
 
 export const Header: FC = () => {
 	const router = useRouter();
+	const pathname = usePathname();
 
-	const menuItems = navLinks.map((elem) => ({ ...elem, command: () => router.push(elem.id) }));
+	const handleChangeTab = (value: INavigationMenuItem) => [router.push(value.id)];
 
-	const endMenu = (
-		<Avatar
-			size='large'
-			icon='pi pi-user'
-			className='p-overlay-badge'>
-			<Badge value='4' />
-		</Avatar>
-	);
 	return (
 		<header>
-			<Menubar
-				start={<strong className='text-lg'>LOGO</strong>}
-				model={menuItems}
-				end={endMenu}
+			<TabMenu
+				onTabChange={(e) => handleChangeTab(e.value as INavigationMenuItem)}
+				model={navLinks}
 				className={`${containerPadding} gap-2 md:gap-3 lg:gap-4`}
+				activeIndex={navLinks.findIndex((elem) => elem.id === pathname)}
 			/>
 		</header>
 	);

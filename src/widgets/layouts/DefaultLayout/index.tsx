@@ -4,10 +4,10 @@ import { FC } from 'react';
 
 export const DefaultLayout: FC<IWrapper> = ({ children }) => {
 	return (
-		<main>
+		<>
 			<Header />
-			{children}
-		</main>
+			<main>{children}</main>
+		</>
 	);
 };
 export default DefaultLayout;

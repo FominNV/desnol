@@ -43,7 +43,7 @@ export const AppealTable: FC<IAppealTableProps> = ({ items = [], columns = [], o
 			value={items}
 			onRowClick={(e) => onRowClick(e.data as IAppealItem)}
 			paginator
-			rows={5}
+			rows={10}
 			rowsPerPageOptions={[5, 10, 25, 50]}
 			selectionMode='single'>
 			{createColumns}

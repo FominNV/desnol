@@ -1,21 +1,18 @@
-import './global.css';
+'use client';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
-import '@public/themes/viva-light/theme.css';
-import type { Metadata } from 'next';
+import './global.css';
+
 import { type FC } from 'react';
 import { PrimeReactProvider } from 'primereact/api';
 import { DefaultLayout } from '@/widgets/layouts';
 
-export const metadata: Metadata = {
-	title: 'Desnol',
-	description: 'Test desnol',
-};
-
 const RootLayout: FC<IWrapper> = (props) => {
 	return (
 		<html lang='ru'>
-			<body>
+			<body className='surface-ground'>
 				<PrimeReactProvider>
 					<DefaultLayout>{props.children}</DefaultLayout>
 				</PrimeReactProvider>

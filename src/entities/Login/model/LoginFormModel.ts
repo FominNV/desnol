@@ -19,7 +19,7 @@ export class LoginFormModel implements ILoginFormModel {
 		if (data) {
 			this.login = data.login || defaultValues.login;
 			this.password = data.password || defaultValues.password;
-			this.isRemember = data.isRemember || defaultValues.isRemember;
+			this.isRemember = !!data.isRemember;
 		}
 	}
 

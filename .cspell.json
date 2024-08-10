@@ -10,7 +10,8 @@
 		"primereact",
 		"primeicons",
 		"inputtext",
-		"datatable"
+		"datatable",
+		"tabmenu"
 	],
 	"ignorePaths": [
 		"node_modules/**",

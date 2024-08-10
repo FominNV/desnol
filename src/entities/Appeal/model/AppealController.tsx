@@ -5,8 +5,13 @@ import { format, formatDuration, intervalToDuration } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { AppealTableColumns } from '../config';
 
-export const useAppealController = () => {
+interface IAppealControllerProps {
+	id?: number;
+}
+
+export const useAppealController = ({ id }: IAppealControllerProps = {}) => {
 	const [appeals, setAppeals] = useState<IAppeal[]>([]);
+	const [detailAppeal, setDetailAppeal] = useState<IAppeal | null>(null);
 
 	const getDuration = useCallback((date: Date): string => {
 		const duration = intervalToDuration({
@@ -33,7 +38,13 @@ export const useAppealController = () => {
 		setAppeals(createAppeals());
 	}, []);
 
+	useEffect(() => {
+		if (!id) return;
+		setDetailAppeal(appeals.find((elem) => elem.id === id) || null);
+	}, [id, appeals]);
+
 	return {
+		detailAppeal,
 		appealsItems: mapAppeals,
 		tableColumns: AppealTableColumns,
 	};
