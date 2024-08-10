@@ -9,7 +9,8 @@
 		"primeflex",
 		"primereact",
 		"primeicons",
-		"inputtext"
+		"inputtext",
+		"datatable"
 	],
 	"ignorePaths": [
 		"node_modules/**",

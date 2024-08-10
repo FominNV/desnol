@@ -3,3 +3,8 @@ body {
 	margin: 0px;
 	border: none;
 }
+
+.p-dropdown-label.p-inputtext {
+	display: flex;
+	align-items: center;
+}

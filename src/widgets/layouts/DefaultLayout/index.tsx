@@ -2,7 +2,7 @@
 import { Header } from '@/widgets/Header';
 import { FC } from 'react';
 
-export const DefaultLayout: FC<IWrapper> = async ({ children }) => {
+export const DefaultLayout: FC<IWrapper> = ({ children }) => {
 	return (
 		<main>
 			<Header />

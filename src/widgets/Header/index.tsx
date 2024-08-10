@@ -23,7 +23,7 @@ export const Header: FC = () => {
 	return (
 		<header>
 			<Menubar
-				start={<p>Logo</p>}
+				start={<strong className='text-lg'>LOGO</strong>}
 				model={menuItems}
 				end={endMenu}
 				className={`${containerPadding} gap-2 md:gap-3 lg:gap-4`}
